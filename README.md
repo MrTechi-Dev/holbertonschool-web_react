@@ -16,4 +16,4 @@
 * [x] 612 0x09. React Redux reducer+selector
 
 ## Software engineer
-[Javier Andrés Garzón Patarroyo](https://www.javierandresgp.com)
+[Andres Barrra]

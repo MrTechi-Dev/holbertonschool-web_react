@@ -29,4 +29,5 @@ At the end of this project, you are expected to be able to [explain to anyone](h
 * [x] 3. Dev servers, modules, and tree shaking
 
 ## Software engineer
-[Javier Andrés Garzón Patarroyo](https://www.javierandresgp.com)
+[Andres Barrra]
+
