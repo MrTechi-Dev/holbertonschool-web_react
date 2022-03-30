@@ -16,4 +16,4 @@
 * [x] 612 0x09. React Redux reducer+selector
 
 ## Software engineer
-[Andres Barrra]
+[Andres Barrera]

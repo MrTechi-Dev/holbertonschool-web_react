@@ -1,14 +1,13 @@
-'use strict';
-// 1. Let's build a Teacher interface
+// task_1 Teacher Interface
 interface Teacher {
-  readonly firstName: string,
-  readonly lastName: string,
-  fullTimeEmployee: boolean,
-  yearsOfExperience?: number,
-  location: string,
+  readonly firstName: string;
+  readonly lastName: string;
+  fullTimeEmployee: boolean;
+  yearsOfExperience?: number;
+  location: string;
   [propName: string]: any;
-};
-
+}
+// creating a teacher
 const teacher3: Teacher = {
   firstName: 'John',
   fullTimeEmployee: false,
@@ -16,13 +15,15 @@ const teacher3: Teacher = {
   location: 'London',
   contract: false,
 };
-//console.log(teacher3);
 
-// 2. Extending the Teacher class
+console.log(teacher3);
+
+// task 2 Director Interface
 interface Directors extends Teacher {
-  numberOfReports: number,
-};
+  numberOfReports: number;
+}
 
+// ex creating Director
 const director1: Directors = {
   firstName: 'John',
   lastName: 'Doe',
@@ -30,36 +31,43 @@ const director1: Directors = {
   fullTimeEmployee: true,
   numberOfReports: 17,
 };
-//console.log(director1);
+console.log(director1);
 
-// 3. Printing teachers
+// TASK3 Printing teachers
 interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-export const printTeacher: printTeacherFunction = (firstName: string, lastName: string): string =>`${firstName.charAt(0)}. ${lastName}`;
+export const printTeacher: printTeacherFunction = (firstName: string, lastName: string): string => {
+  return `${firstName[0]}. ${lastName}`;
+}
 
-//console.log(printTeacher("John", "Doe"));
+//example
+console.log(printTeacher("John", "Doe"));
 
-// 4. Writing a class
-interface StudentClassConstructor {
+// TASK 4
+// https://www.typescriptlang.org/docs/handbook/interfaces.html
+// Difference between the static and instance sides of classes
+interface StudentConstructor {
   new(firstName: string, lastName: string): StudentClassInterface;
 }
 interface StudentClassInterface {
   firstName: string;
   lastName: string;
+  workOnHomework(): string;
+  displayName(): string;
 }
-class StudentClass implements StudentClassInterface {
+export const StudentClass: StudentConstructor = class StudentClass implements StudentClassInterface {
   firstName: string;
   lastName: string;
   constructor(firstName: string, lastName: string) {
     this.firstName = firstName;
     this.lastName = lastName;
   }
-  workOnHomework() {
-    return 'Currently working';
+  workOnHomework(): string {
+    return "Currently working";
   }
-  displayName() {
+  displayName(): string {
     return this.firstName;
   }
 }
